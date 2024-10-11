@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study UK</title>
+          <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            position: relative;
+            overflow-x: hidden; /* Horizontal scrolling ko rokne ke liye */
+        }
+
+        /* Typewriter effect for welcome text */
+        .welcome-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #448EE4;
+            text-align: center;
+            margin: 20px 0; /* Margin ko thoda reduce kiya */
+            white-space: nowrap; /* Text ko ek hi line mein rakha */
+            overflow: hidden; /* Extra text ko chhupane ke liye */
+            border-right: 4px solid; /* Cursor effect */
+            width: 0; /* Initial width */
+            animation: typing 5s steps(30, end), blink-caret .75s step-end infinite, moving 15s linear infinite; /* Typing aur blinking animation */
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #448EE4; }
+        }
+
+        @keyframes moving {
+            0%, 100% { width: 0; } /* Reset width for continuous typing */
+            50% { width: 100%; } /* Full width in the middle */
+        }
+
+        .container {
+            display: flex; /* Flexbox use kiya side by side sections ke liye */
+            flex-wrap: wrap; /* Wrap ko allow karte hain */
+            gap: 20px; /* Gap between sections */
+            padding: 20px; /* Padding ko thoda reduce kiya */
+            margin-top: 50px; /* Welcome text ke liye space */
+        }
+
+        .section {
+            text-align: center;
+            border: 2px solid #448EE4;
+            border-radius: 10px;
+            padding: 15px; /* Padding ko thoda reduce kiya */
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            flex: 1 1 calc(50% - 20px); /* Do sections side by side */
+            min-width: 200px; /* Minimum width */
+            max-width: 300px; /* Maximum width to limit size */
+            height: auto; /* Height ko automatic rakha */
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+        }
+
+        .section img {
+            width: 100%;
+            height: auto; /* Image ki height ko automatic rakha */
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            margin-top: 10px; /* Thoda margin reduce kiya */
+            font-size: 18px; /* Font size thoda chhota kiya */
+            color: #333;
+        }
+
+        .section a {
+            text-decoration: none;
+            color: #448EE4;
+            font-weight: bold;
+        }
+
+        /* Profile picture */
+        .profile-pic {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px; /* Size thoda chhota kiya */
+            height: 40px; /* Size thoda chhota kiya */
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; /* Circle shape */
+            border: 2px solid #448EE4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-pic a {
+            display: block;
+        }
+
+        /* Second circle icon */
+        .circle-icon {
+            position: fixed; /* Position fixed to stay in place while scrolling */
+            bottom: 20px; /* Bottom position */
+            right: 10px;
+            width: 40px; /* Circle icon ki size */
+            height: 40px; /* Circle icon ki size */
+            border-radius: 50%; /* Circle shape */
+            overflow: hidden;
+            border: 2px solid #448EE4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: scroll-up-down 1s infinite alternate; /* Icon ka movement effect */
+        }
+
+        .circle-icon img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .circle-icon a {
+            display: block;
+        }
+
+        /* Animation for circle icon */
+        @keyframes scroll-up-down {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px); /* Movement up */
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: row; /* Mobile par bhi side by side rakhein */
+                justify-content: space-between; /* Space ko evenly distribute karne ke liye */
+            }
+
+            .welcome-text {
+                font-size: 24px; /* Mobile par font size thoda chhota kiya */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Text -->
+    <div class="welcome-text">Welcome To Study UK</div>
+
+    <!-- Profile Picture -->
+    <div class="profile-pic">
+        <a href="https://t.me/SDV_bots" target="_blank">
+            <img src="https://graph.org/file/be8f95ccf73c4044a6430.jpg" alt="Profile Picture">
+        </a>
+    </div>
+
+    <!-- Second Circle Icon -->
+    <div class="circle-icon">
+        <a href="https://study-uk.great-site.net/Guru-AI.html" target="_blank">
+            <img src="https://iili.io/d8ixUpS.md.jpg" alt="Guru AI">
+        </a>
+    </div>
+
+    <div class="container">
+        <!-- Section 1 -->
+        <div class="section">
+            <a href="/NEET-2024.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="NEET 2024">
+                <h2>NEET 2024</h2>
+            </a>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <a href="/JEE-2024.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="JEE 2024">
+                <h2>IIT JEE 2024</h2>
+            </a>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <a href="/NEET-2025.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="NEET 2025">
+                <h2>NEET 2025</h2>
+            </a>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <a href="/UPSC.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="UPSC">
+                <h2>UPSC</h2>
+            </a>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <a href="/other.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="other">
+                <h2>Other batches</h2>
+            </a>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <a href="/ALLEN.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="ALLEN batches">
+                <h2>ALLEN Batches</h2>
+            </a>
+        </div>
+        
+        <div class="section">
+            <a href="/test-allen.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="ALLEN">
+                <h2>ALLEN TEST AND MATERIALS</h2>
+            </a>
+        </div>
+        
+        <div class="section">
+            <a href="/UK-special-courses.html" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="UK">
+                <h2>UK SPECIAL</h2>
+            </a>
+        </div>
+        
+    <div class="section">
+            <a href="https://t.me/SDV_bots" target="_blank">
+                <img src="https://iili.io/dQqOsbR.jpg" alt="JOIN">
+                <h2>JOIN TG</h2>
+            </a>
+        </div>
+        
+        <div class="section">
+            <a href="/Guru-AI.html" target="_blank">
+                <img src="https://iili.io/d8ixUpS.md.jpg" alt="ALLEN JEE">
+                <h2>GURU AI</h2>
+            </a>
+        </div>
+    </div>
+    
+
+</body>
+</html>

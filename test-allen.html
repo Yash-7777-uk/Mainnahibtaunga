@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Series - Study Website</title>
+       <script>
+          function getCookie(name) {
+              const value = `; ${document.cookie}`;
+                  const parts = value.split(`; ${name}=`);
+                      if (parts.length === 2) return parts.pop().split(';').shift();
+                        }
+
+                          if (!getCookie('login')) {
+                              // Agar logged in nahi hain, toh generate key page par redirect karo
+                                  window.location.href = 'https://study-uk.great-site.net/generate-key.html';
+                                    }
+                                   </script>
+ 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7e0; /* Light green background */
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #388e3c; /* Dark green for header */
+            font-size: 2.5em;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .batch {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .batch:hover {
+            transform: scale(1.05);
+        }
+
+        .batch h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #388e3c;
+        }
+
+        .batch img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .view-btn {
+            background-color: #66bb6a; /* Parrot green */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background-color: #388e3c; /* Darker green on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-top: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: #666;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Test Series</h1>
+        <p>Choose from various study materials and test series to improve your knowledge!</p>
+    </header>
+
+    <div class="container">
+        <div class="batch">
+            <img src="https://iili.io/dtlJhp2.md.jpg" alt="ALLEN Test Series" class="batch-image">
+            <h2>ALLEN Test Series</h2>
+            <button class="view-btn" onclick="openLink('/ALLEN-Test-Series.html')">View</button>
+        </div>
+
+        <div class="batch">
+            <img src="https://iili.io/dtlJhp2.md.jpg" alt="ALLEN Study Materials" class="batch-image">
+            <h2>ALLEN Study Materials</h2>
+            <button class="view-btn" onclick="openLink('/ALLEN-Study-Materials.html')">View</button>
+        </div>
+
+        <div class="batch">
+            <img src="https://iili.io/dtlJhp2.md.jpg" alt="ALLEN Digital" class="batch-image">
+            <h2>ALLEN Digital</h2>
+            <button class="view-btn" onclick="openLink('/ALLEN-DIGITAL.html')">View</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study UK Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

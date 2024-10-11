@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study UK Website</title>
+       <script>
+          function getCookie(name) {
+              const value = `; ${document.cookie}`;
+                  const parts = value.split(`; ${name}=`);
+                      if (parts.length === 2) return parts.pop().split(';').shift();
+                        }
+
+                          if (!getCookie('login')) {
+                              // Agar logged in nahi hain, toh generate key page par redirect karo
+                                  window.location.href = 'https://study-uk.great-site.net/generate-key.html';
+                                    }
+                                   </script>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #e6f7ff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2, h3, h4 {
+            color: #448EE4;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Batch Container */
+        .batch-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Batch Styles */
+        .batch {
+            border: 2px solid #448EE4;
+            border-radius: 8px;
+            width: 300px;
+            margin: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .batch:hover {
+            transform: scale(1.05);
+        }
+
+        .batch img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .batch-details {
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .batch-details h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #448EE4;
+        }
+
+        .batch-details p {
+            margin: 0;
+            color: #555;
+        }
+
+        .batch-details button {
+            background-color: #448EE4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .batch-details button:hover {
+            background-color: #357ABD;
+        }
+
+        /* No Batches Message */
+        .no-batches {
+            text-align: center;
+            color: #ff4d4d;
+            font-size: 1.5em;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Teachers List */
+        .teachers-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .teachers-list li {
+            background-color: #f0f8ff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .teachers-list li:hover {
+            background-color: #e0f0ff;
+        }
+
+        /* Link Styling */
+        .teachers-list li a {
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        .teachers-list li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back Button Styling */
+        .back-button {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .batch {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Removed h1 Welcome to Study UK -->
+        <!-- Removed Menu Button and Profile Picture -->
+
+        <!-- Batch List Section -->
+        <div class="batch-container" id="batch-container">
+            <!-- Example Batch Cards -->
+           
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Prashiksha Batch NEET UG 2024</h2>
+            <p>Complete foundation course for NEET UG 2024.</p>
+            <button onclick="showBatchDetails('Prashiksha_Batch_NEET_UG_2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+        
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Pahal Batch NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Pahal_Batch_NEET_UG_2024')">Let's Study</button>
+        </div>
+    </div>
+    
+        
+        
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Excel-2 Apex  2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Excel-2 Apex  2024')">Let's Study</button>
+        </div>
+    </div>
+    
+        
+        
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Crash Course 2</h2>
+            <p>crash your Neet exam with cresh course 2.0.</p>
+            <button onclick="showBatchDetails('Crash Course 2')">Let's Study</button>
+        </div>
+    </div>
+    
+        
+        
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Master Pro Elite 2024</h2>
+            <p>Dropper Neet revision course.</p>
+            <button onclick="showBatchDetails('Master Pro Elite 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+        
+        
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Excel-1 Patna Neet 2025</h2>
+            <p>Targeted Neet 2025 batch.</p>
+            <button onclick="showBatchDetails('Excel-1 Patna Neet 2025')">Let's Study</button>
+        </div>
+    </div>
+    
+        
+        
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Kota NEET UG 2025 Dream Batch 1</h2>
+            <p>Targeted Neet 2025 batch.</p>
+            <button onclick="showBatchDetails('Kota NEET UG 2025 Dream Batch 1')">Let's Study</button>
+        </div>
+    </div>
+    
+    
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Kota NEET UG 2025 Master Pro 3 (A)</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Kota NEET UG 2025 Master Pro 3 (A)')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>UNNATI Batch NEET UG 2024 (Hindi)</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('UNNATI Batch NEET UG 2024 (Hindi)')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Kartavya Batch NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Kartavya Batch NEET UG 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Prerna Batch for NEET 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Prerna Batch for NEET 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Vijay Batch for NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Vijay Batch for NEET UG 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Utkarsh Batch for NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Utkarsh Batch for NEET UG 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>NEET UG CE-4</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('NEET UG CE-4')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>NEET UG CE-3</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('NEET UG CE-3')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Kota NEET UG 2024 CC-3</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Kota NEET UG 2024 CC-3')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>NEET UG 2024 CB-1</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('NEET UG 2024 CB-1')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Kota NEET UG 2024 CB-2</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Kota NEET UG 2024 CB-2')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Sanyam Batch for NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Sanyam Batch for NEET UG 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Yash Batch for NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Yash Batch for NEET UG 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Shruti Batch for NEET 2025</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Shruti Batch for NEET 2025')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Prakhar Batch for NEET 2025</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Prakhar Batch for NEET 2025')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Patna NEET UG 2024 Conquer 1</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Patna NEET UG 2024 Conquer 1')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Patna NEET UG 2024 Conquer 5</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Patna NEET UG 2024 Conquer 5')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Patna NEET UG 2024 Conquer Batch 08</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Patna NEET UG 2024 Conquer Batch 08')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Patna NEET UG 2024 Conquer Batch 09</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Patna NEET UG 2024 Conquer Batch 09')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Patna NEET UG 2024 Conquer Batch 07</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Patna NEET UG 2024 Conquer Batch 07')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Patna NEET UG 2024 Conquer 4</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Patna NEET UG 2024 Conquer 4')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Spark Batch for NEET UG 2025</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Spark Batch for NEET UG 2025')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Kota NEET UG 2025 GB-1</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Kota NEET UG 2025 GB-1')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Patna NEET UG 2024 Conquer Batch 12</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Patna NEET UG 2024 Conquer Batch 12')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Vijaypath Batch NEET 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Vijaypath Batch NEET 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Saksham Batch NEET 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Saksham Batch NEET 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Sashastra NEET UG 2025</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Sashastra NEET UG 2025')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Ahmedabad NEET UG 2024 Excel SRG</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Ahmedabad NEET UG 2024 Excel SRG')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Janakpuri NEET UG Conquer 9</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Janakpuri NEET UG Conquer 9')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Yudhister Batch for NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Yudhister Batch for NEET UG 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Ujjwalta Batch for NEET UG 2024</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Ujjwalta Batch for NEET UG 2024')">Let's Study</button>
+        </div>
+    </div>
+    
+
+
+    <div class="batch">
+        <img src="https://iili.io/dQqOsbR.jpg" alt="Batch Image">
+        <div class="batch-details">
+            <h2>Kota NEET UG 2025 Excel 1</h2>
+            <p>Advanced preparation course.</p>
+            <button onclick="showBatchDetails('Kota NEET UG 2025 Excel 1')">Let's Study</button>
+        </div>
+    </div>
+            
+        </div>
+
+        <!-- Details Section -->
+        <div class="details-section" id="details-section" style="display: none;">
+            <button class="back-button" onclick="goBack()">Back to Batches</button>
+            <h2 id="batch-title">Batch Details</h2>
+            <ul class="teachers-list" id="teachers-list">
+                <!-- Teachers will be loaded here dynamically -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to show batch details
+        function showBatchDetails(batchName) {
+            const batchContainer = document.getElementById('batch-container');
+            const detailsSection = document.getElementById('details-section');
+            const batchTitle = document.getElementById('batch-title');
+            const teachersList = document.getElementById('teachers-list');
+
+            // Show details section and hide batch container
+            batchContainer.style.display = 'none';
+            detailsSection.style.display = 'block';
+            batchTitle.textContent = `${batchName} Teachers`;
+
+            // Push state to history
+            history.pushState({ batchName }, '', `#${encodeURIComponent(batchName)}`);
+
+            // Fetch the list of teachers for the selected batch
+            fetch(`https://uk-study-batch-api.onrender.com/batch/${encodeURIComponent(batchName)}`)
+                .then(response => response.json())
+                .then(files => {
+                    teachersList.innerHTML = ''; // Clear existing list
+
+                    if (files.length > 0) {
+                        files.forEach(file => {
+                            const teacherName = file.split('/').pop().replace('.html', '').replace(/_/g, ' ');
+                            const li = document.createElement('li');
+                            const a = document.createElement('a');
+                            
+                            a.href = `#${encodeURIComponent(batchName)}/#${encodeURIComponent(teacherName)}`;
+                            a.textContent = teacherName;
+                            a.onclick = (event) => {
+                                event.preventDefault(); // Prevent default anchor behavior
+                                loadTeacherFile(batchName, file); // Load the teacher file
+                            };
+                            li.appendChild(a);
+                            teachersList.appendChild(li);
+                        });
+                    } else {
+                        const message = document.createElement('div');
+                        message.classList.add('no-batches');
+                        message.textContent = 'No Teachers Found';
+                        teachersList.appendChild(message);
+                    }
+                })
+                .catch(err => {
+                    const message = document.createElement('div');
+                    message.classList.add('no-batches');
+                    message.textContent = 'Unable to load batch details';
+                    teachersList.appendChild(message);
+                    console.error(err);
+                });
+        }
+
+        // Function to load teacher's lectures or details
+        function loadTeacherFile(batchName, file) {
+            const teachersList = document.getElementById('teachers-list');
+            const batchTitle = document.getElementById('batch-title');
+
+            // Push state to history
+            const teacherName = file.split('/').pop().replace('.html', '').replace(/_/g, ' ');
+            history.pushState({ batchName, teacherName }, '', `#${encodeURIComponent(batchName)}/#${encodeURIComponent(teacherName)}`);
+
+            // Clear current content
+            teachersList.innerHTML = `<h3>Lectures by ${teacherName}</h3>`;
+
+            // Fetch the teacher file content
+            fetch(`https://uk-study-batch-api.onrender.com/batch/${encodeURIComponent(batchName)}/${encodeURIComponent(file)}`)
+                .then(response => response.text())
+                .then(data => {
+                    const teacherContent = document.createElement('div');
+                    teacherContent.innerHTML = data;
+                    teachersList.appendChild(teacherContent);
+                })
+                .catch(err => {
+                    const message = document.createElement('div');
+                    message.classList.add('no-batches');
+                    message.textContent = 'Unable to load teacher file';
+                    teachersList.appendChild(message);
+                    console.error(err);
+                });
+        }
+
+        // Function to navigate back to the batch list
+        function goBack() {
+            const detailsSection = document.getElementById('details-section');
+            const batchContainer = document.getElementById('batch-container');
+            const teachersList = document.getElementById('teachers-list');
+
+            // Hide details section and show batch container
+            detailsSection.style.display = 'none';
+            batchContainer.style.display = 'flex';
+
+            // Clear teachers list
+            teachersList.innerHTML = '';
+
+            // Remove last history state
+            history.back();
+        }
+
+        // Handle browser back and forward buttons
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.batchName) {
+                // Show batch details
+                showBatchDetails(event.state.batchName);
+            } else {
+                // Show batch list
+                const detailsSection = document.getElementById('details-section');
+                const batchContainer = document.getElementById('batch-container');
+                detailsSection.style.display = 'none';
+                batchContainer.style.display = 'flex';
+            }
+        });
+
+        // On page load, check if there's a hash in the URL to load specific batch or teacher
+        window.onload = function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const parts = hash.split('/#');
+                const batchName = decodeURIComponent(parts[0].substring(1));
+                const teacherName = parts[1] ? decodeURIComponent(parts[1]) : null;
+
+                if (batchName) {
+                    showBatchDetails(batchName);
+                    if (teacherName) {
+                        const fileName = `${teacherName}.html`;
+                        loadTeacherFile(batchName, fileName);
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>

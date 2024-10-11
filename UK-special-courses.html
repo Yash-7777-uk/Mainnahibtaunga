@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Study UK</title>
+       <script>
+          function getCookie(name) {
+              const value = `; ${document.cookie}`;
+                  const parts = value.split(`; ${name}=`);
+                      if (parts.length === 2) return parts.pop().split(';').shift();
+                        }
+
+                          if (!getCookie('login')) {
+                              // Agar logged in nahi hain, toh generate key page par redirect karo
+                                  window.location.href = 'https://study-uk.great-site.net/generate-key.html';
+                                    }
+                                   </script>
+ 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Light blue background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #004d40;
+        }
+
+        .course-card {
+            display: flex;
+            flex-direction: column; /* Make cards stack content vertically */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .course-info {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .course-title {
+            font-size: 1.5em;
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+
+        .enroll-btn {
+            background-color: #ff0000; /* Hacker red color */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            width: 100%; /* Full width on mobile */
+        }
+
+        .enroll-btn:hover {
+            background-color: #e60000;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+        }
+
+        @media (min-width: 768px) {
+            .course-card {
+                flex-direction: row; /* Revert to side-by-side layout for larger screens */
+            }
+
+            .course-info {
+                text-align: left;
+            }
+
+            .enroll-btn {
+                width: auto; /* Revert to auto width for larger screens */
+                margin-top: 0;
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Advanced Study Courses</h1>
+
+        <!-- Course 1 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQfNZ1n.md.jpg" alt="Practical Ethical Hacking">
+            <div class="course-info">
+                <h2 class="course-title">Practical Ethical Hacking</h2>
+                <a href="https://drive.google.com/drive/mobile/folders/1if6MCeBCj8sxWwJIKhtgwU0GBuBW8uLx" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQfORrg.md.jpg" alt="Graphix Studio Graphic Designing">
+            <div class="course-info">
+                <h2 class="course-title">Graphix Studio Graphic Designing Complete</h2>
+                <a href="https://drive.google.com/drive/folders/1WPGUu6zH3Mdveg5SA0qYYGwgkYAdrDx1" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQfOm6F.md.jpg" alt="Android Development and App Development">
+            <div class="course-info">
+                <h2 class="course-title">Android Development and App Development</h2>
+                <a href="https://drive.google.com/drive/folders/1BnqNr49J_dLbS37gUwJGo70Yv-ZPSXum" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+      
+        <!-- Course 4 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQqOsbR.jpg" alt=" 𝙁𝙧𝙚𝙚𝙡𝙖𝙣𝙘𝙞𝙣𝙜 𝙖𝙣𝙙 𝘿𝙞𝙜𝙞𝙩𝙖𝙡 𝙈𝙖𝙧𝙠𝙚𝙩𝙞𝙣𝙜 𝘾𝙤𝙪𝙧𝙨𝙚𝙨 ">
+            <div class="course-info">
+                <h2 class="course-title"> 𝙁𝙧𝙚𝙚𝙡𝙖𝙣𝙘𝙞𝙣𝙜 𝙖𝙣𝙙 𝘿𝙞𝙜𝙞𝙩𝙖𝙡 𝙈𝙖𝙧𝙠𝙚𝙩𝙞𝙣𝙜 𝘾𝙤𝙪𝙧𝙨𝙚𝙨 </h2>
+                <a href="http://drive.google.com/drive/folders/1ezDZ3uDplBOjbuBGw1qxzzD64tiXhtDt?usp=sharing" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+        
+        <!-- Course 5 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQqgdmu.md.jpg" alt="WiFi HACKING COURSE ">
+            <div class="course-info">
+                <h2 class="course-title">WiFi HACKING COURSE </h2>
+                <a href="https://mega.nz/folder/ypgg3QJS#GmKAHx44BgENWi-ZBKNnOA" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+        
+        <!-- Course 6 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQqD6db.md.jpg" alt="BUG BOUNTY COURSE">
+            <div class="course-info">
+                <h2 class="course-title">BUG BOUNTY COURSE</h2>
+                <a href="https://drive.google.com/drive/folders/1t-hTqg0-02t0cnc5SypHnb8t3CfE3bXU" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+        
+        <!-- Course 7 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQaEYLg.md.jpg" alt="Complete Web Development by Dr Angela Yu">
+            <div class="course-info">
+                <h2 class="course-title">Complete Web Development by Dr Angela Yu</h2>
+                <a href="https://drive.google.com/drive/folders/1iaw4h-T0mepzevasiRBTcrM0qGaNiEr0" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+        
+        <!-- Course 8 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQaVrTN.md.jpg" alt="Video Editing & Animation by Miss Sehrish">
+            <div class="course-info">
+                <h2 class="course-title">Video Editing & Animation by Miss Sehrish</h2>
+                <a href="https://teraboxapp.com/s/1_cHbmFCyaXh-80qliOP8tg" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+        
+        <!-- Course 9 -->
+        <div class="course-card">
+            <img src="https://iili.io/dQcBmEg.md.jpg" alt="Udemy - Create Animated Series for YouTube in CrazyTalk Animator 3 ">
+            <div class="course-info">
+                <h2 class="course-title">Udemy - Create Animated Series for YouTube in CrazyTalk Animator 3</h2>
+                <a href="https://mega.nz/file/SqxEwaxS#fZyJ-gD85AEpeI_k9IfUm0ZXEBATvsUzo4NqkxFl67w" target="_blank" class="enroll-btn">Enroll Course</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © study UK 2024
+    </footer>
+
+</body>
+</html>

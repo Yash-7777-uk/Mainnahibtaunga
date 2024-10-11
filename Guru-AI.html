@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Guru AI</title>
+       <script>
+          function getCookie(name) {
+              const value = `; ${document.cookie}`;
+                  const parts = value.split(`; ${name}=`);
+                      if (parts.length === 2) return parts.pop().split(';').shift();
+                        }
+
+                          if (!getCookie('login')) {
+                              // Agar logged in nahi hain, toh generate key page par redirect karo
+                                  window.location.href = 'https://study-uk.great-site.net/generate-key.html';
+                                    }
+                                   </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://iili.io/d8ixUpS.md.jpg'); /* Background Buddha image */
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(8px); /* Adds the shadow effect */
+        }
+        .chat-container {
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .chat-header {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .chat-header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .chat-header h2 {
+            color: white;
+            margin: 0;
+            padding-left: 10px;
+            font-size: 20px;
+        }
+        .chat-box {
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent chat box */
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 100%;
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        .input-box {
+            display: flex;
+            width: 100%;
+        }
+        .input-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        .input-box button {
+            padding: 10px;
+            border: none;
+            background-color: #448EE4;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Chat Header similar to the one you provided -->
+        <div class="chat-header">
+            <img src="https://iili.io/d8ixUpS.md.jpg" alt="Guru AI"> <!-- Replace with Guru AI image -->
+            <h2>Chat with Guru AI</h2>
+        </div>
+
+        <div class="chat-box" id="chat-box">
+            <p><strong>Guru AI:</strong> Hello! I am your personal very intelligent teacher. Ask me anything and I will help you with the answers!</p>
+        </div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Ask a question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let userInput = document.getElementById('user-input').value;
+            if (userInput.trim() === '') return;
+
+            // Display user question in chat box
+            let chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+
+            // Clear input field
+            document.getElementById('user-input').value = '';
+
+            // Send API request to chatbot API with a teacher-based context
+            let teacherContext = "You are a very intelligent teacher who knows everything. Provide educational answers in a clear and helpful way.";
+            fetch(`uk-gpt.000.pe/?question=${encodeURIComponent(teacherContext + " " + userInput)}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Display bot response in chat box
+                    chatBox.innerHTML += `<p><strong>Guru AI:</strong> ${data.answer}</p>`;
+                    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+                })
+                .catch(error => {
+                    chatBox.innerHTML += `<p><strong>Guru AI:</strong> Sorry, I couldn't get the answer. Please try again!</p>`;
+                });
+        }
+    </script>
+
+</body>
+</html>

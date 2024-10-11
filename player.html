@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study-UK Player 2.0</title>
+  <style>
+    .fixed {
+      position: fixed;
+    }
+    .h-full {
+      height: 100%;
+    }
+    .w-full {
+      width: 100%;
+    }
+    .top-0 {
+      top: 0;
+    }
+    .left-0 {
+      left: 0;
+    }
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    .bg-black {
+      background-color: black;
+    }
+    .z-[99] {
+      z-index: 99;
+    }
+    .video-js {
+      width: 100%;
+      height: 100%;
+    }
+    .bg-transparent {
+      background-color: transparent;
+    }
+    .bottom-3 {
+      bottom: 0.75rem;
+    }
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .flex {
+      display: flex;
+    }
+    .justify-between {
+      justify-content: space-between;
+    }
+    .items-center {
+      align-items: center;
+    }
+    .mr-4 {
+      margin-right: 1rem;
+    }
+    .text-white {
+      color: white;
+    }
+    .text-sm {
+      font-size: 0.875rem;
+    }
+    .bg-white {
+      background-color: white;
+    }
+    .rounded-md {
+      border-radius: 0.375rem;
+    }
+    .py-0.5 {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+    }
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    #controls {
+      display: none;
+    }
+    #current-time, #video-duration {
+      display: none;
+    }
+    .download-btn, .settings-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+    .settings-btn {
+      right: 70px;
+    }
+    .quality-select {
+      position: absolute;
+      top: 10px;
+      right: 140px; /* Adjusted for quality select */
+      padding: 10px;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+  <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script> <!-- For DASH Support -->
+</head>
+<body>
+
+  <div class="fixed h-full w-full top-0 left-0 overflow-hidden bg-black z-[99]">
+    <!-- HLS Video Player -->
+    <video id="hls-video" class="video-js h-full w-full vjs-default-skin" controls preload="auto">
+      Your browser does not support HLS, DASH, or WebM streaming.
+    </video>
+
+    <!-- Quality Selection Button -->
+    <select class="quality-select" id="quality-select">
+      <option value="">Select Quality</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <!-- Download and Settings Buttons -->
+    <div class="download-btn" id="download-btn">Download</div>
+    <div class="settings-btn" id="settings-btn">Settings</div>
+  </div>
+
+  <script>
+    // Get the video element and the URL parameter
+    var player = videojs('hls-video');
+    var urlParams = new URLSearchParams(window.location.search);
+    var videoUrl = urlParams.get('url');
+
+    // Function to process the video URL
+    function processVideoUrl(url) {
+      // Replace specific URL patterns
+      if (url.includes("https://dkxubxs5kklfj.cloudfront.net/") || url.includes(":144")) {
+        return url.replace("https://dkxubxs5kklfj.cloudfront.net/", "https://uamedia.uacdn.net/");
+      }
+      return url;
+    }
+
+    // Load video based on type (m3u8, mpd, webm, etc.)
+    videoUrl = processVideoUrl(videoUrl); // Process the video URL
+
+    if (videoUrl.endsWith('.m3u8')) {
+      player.src({ src: videoUrl, type: 'application/x-mpegURL' });
+    } else if (videoUrl.endsWith('.mpd')) {
+      player.src({ src: videoUrl, type: 'application/dash+xml' });
+    } else if (videoUrl.endsWith('.webm') || videoUrl.endsWith('.mp4')) {
+      player.src({ src: videoUrl, type: 'video/webm' });
+    } else {
+      alert("Unsupported video format.");
+    }
+
+    // Download Button Functionality
+    document.getElementById('download-btn').addEventListener('click', function() {
+      window.open(videoUrl, '_blank');
+    });
+
+    // Settings Button for Quality Selection
+    document.getElementById('settings-btn').addEventListener('click', function() {
+      alert('Settings button clicked. Quality options coming soon.');
+    });
+
+    // Quality Selection Functionality
+    document.getElementById('quality-select').addEventListener('change', function() {
+      const selectedQuality = this.value;
+      if (selectedQuality) {
+        alert(`Quality set to ${selectedQuality}. This functionality will be implemented soon.`);
+      }
+    });
+
+    // Fullscreen Functionality
+    document.getElementById('fullscreen-btn').addEventListener('click', function() {
+      if (player.isFullscreen()) {
+        player.exitFullscreen();
+      } else {
+        player.requestFullscreen();
+      }
+    });
+
+    // Double Tap Seek Functionality
+    let lastTap = 0;
+    const doubleTapThreshold = 300; // time in ms
+    const seekAmount = 10; // seconds to seek
+
+    const handleDoubleTap = (event) => {
+      const currentTime = player.currentTime();
+      const currentTimeMs = new Date().getTime();
+      
+      if (currentTimeMs - lastTap < doubleTapThreshold) {
+        const touchX = event.changedTouches[0].clientX;
+        const halfWidth = window.innerWidth / 2;
+        
+        if (touchX < halfWidth) {
+          player.currentTime(Math.max(0, currentTime - seekAmount));
+        } else {
+          player.currentTime(Math.min(player.duration(), currentTime + seekAmount));
+        }
+      }
+      lastTap = currentTimeMs;
+    };
+
+    document.getElementById('hls-video').addEventListener('touchend', handleDoubleTap);
+  </script>
+</body>
+</html>
